@@ -7,15 +7,15 @@
 
     <resultMap id="baseMap" type="com.example.demo.entity.Test">
         <id property="lsbh" column="lsbh"/>
-        <result property="a" column="a" />
-        <result property="b" column="b" />
+        <result property="a" column="a"/>
+        <result property="b" column="b"/>
         <collection property="list2" ofType="com.example.demo.entity.Test2">
-            <id property="lsbh" column="lsbh_y"/>
-            <result property="c" column="c" />
+            <result property="lsbh" column="lsbh_y"/>
+            <result property="c" column="c"/>
         </collection>
         <collection property="list3" ofType="com.example.demo.entity.Test3">
-            <id property="lsbh" column="lsbh_z"/>
-            <result property="d" column="d" />
+            <result property="lsbh" column="lsbh_z"/>
+            <result property="d" column="d"/>
         </collection>
     </resultMap>
 
