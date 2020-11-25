@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.BatchInsertsDao">
+    <insert id="batchInsertsIgnoreRep">
+        with main as
+        <foreach collection="persons" item="person" separator="union all">
+            select #{person.name} as name, #{person.age} as age from dual
+            name = #{person.name})
+        </foreach>
+
+        insert into person (name, age) values main
+
+<!--        insert into person (name, age) values-->
+<!--        <foreach collection="persons" item="person" open="(" close=")" separator="union all">-->
+<!--            select ${person.name}, ${person.age} from dual where not exists (select 1 from person where name =-->
+<!--            #{person.name})-->
+<!--        </foreach>-->
+    </insert>
+</mapper>
