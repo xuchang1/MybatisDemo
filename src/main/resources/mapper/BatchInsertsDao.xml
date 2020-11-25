@@ -11,7 +11,7 @@
 
         insert into person (name, age)
         <foreach collection="persons" item="person" open="(" close=")" separator="union all">
-            select #{person.name} as name , #{person.age} as age from dual where not exists (select 1 from person where name =
+            select #{person.name} , #{person.age} from dual where not exists (select 1 from person where name =
             #{person.name})
         </foreach>
     </insert>
